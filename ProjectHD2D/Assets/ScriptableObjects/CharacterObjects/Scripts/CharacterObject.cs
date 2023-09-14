@@ -5,12 +5,47 @@ using UnityEngine;
 public enum CharacterType
 {
     Human,
-    Demon
+    Demon,
+    Monster
 }
 public class CharacterObject : ScriptableObject
 {
-    public GameObject prefab;
+    int life;
+    int mana;
+    
+
     public CharacterType type;
-    [TextArea(15,20)]
-    public string text;
+
+    public int GetLife()
+    {
+        return life;
+    }
+    public void SetLife(int life)
+    {
+        this.life = life;
+    }
+    public int GetMana()
+    {
+        return mana;
+    }
+    public void SetMana(int mana)
+    {
+        this.mana = mana;
+    }
+    public void IncreaseLife(int life)
+    {
+        this.life += life;
+    }
+    public void DecreaseLife(int life)
+    {
+        this.life -= life;
+    }
+    public void IncreaseMana(int mana)
+    {
+        this.mana += mana;
+    }
+    public void DecreaseMana(int mana)
+    {
+        this.mana -= mana;
+    }
 }
